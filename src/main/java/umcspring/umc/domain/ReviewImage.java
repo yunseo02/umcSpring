@@ -15,9 +15,10 @@ public class ReviewImage {
     @Column(name = "review_image_id")
     private Long id;
 
+    @Column(length = 255)
     private String imageUrl;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "review_id")
+    @JoinColumn(name = "review_id", nullable = false)
     private Review review;
 }

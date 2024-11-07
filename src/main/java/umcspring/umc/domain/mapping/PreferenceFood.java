@@ -15,6 +15,7 @@ public class PreferenceFood {
     @Column(name = "preference_Food_id")
     private Long id;
 
+    @Column(length = 20)
     private String Food;
 
     @ManyToOne(fetch = FetchType.LAZY)

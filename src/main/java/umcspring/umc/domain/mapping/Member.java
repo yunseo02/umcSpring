@@ -25,6 +25,7 @@ public class Member extends BaseEntity {
     @Column(name = "member_id")
     private Long id;
 
+    @Column(length = 10, unique = true, nullable = false)
     private String name;
 
     @Enumerated(EnumType.STRING)
@@ -37,12 +38,14 @@ public class Member extends BaseEntity {
     private Address address;
 
     @Enumerated(EnumType.STRING)
+    @Column(columnDefinition = "VARCHAR(10) DEFAULT 'ACTIVE'")
     private MemberStatus status;
 
     private LocalDateTime inactive_date;
 
     private Integer total_point;
 
+    @Column(length = 15, unique = true, nullable = false)
     private String phone_num;
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)

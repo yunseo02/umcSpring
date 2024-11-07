@@ -18,7 +18,9 @@ public abstract class Alarm extends BaseEntity {
     @Column(name = "alarm_id")
     private Long id;
 
+    @Column(length = 20)
     private String title;
+    @Column(columnDefinition = "Text")
     private String content;
 
     @Enumerated(EnumType.STRING)

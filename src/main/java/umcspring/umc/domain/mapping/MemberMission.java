@@ -18,6 +18,7 @@ public class MemberMission extends BaseEntity {
 
     private int score;
 
+    @Column(columnDefinition = "Text")
     private String content;
 
     @ManyToOne(fetch = FetchType.LAZY)
