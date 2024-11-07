@@ -3,7 +3,6 @@ package umcspring.umc.domain;
 import jakarta.persistence.*;
 import lombok.*;
 import umcspring.umc.domain.common.BaseEntity;
-import umcspring.umc.domain.mapping.Mission;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +24,9 @@ public class Store extends BaseEntity {
     private double latitude;
     private double longitude;
 
-    @OneToMany(mappedBy = "store")
+    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
     private List<Review> reviews = new ArrayList<>();
 
-    @OneToMany(mappedBy = "store")
+    @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
     private List<Mission> missions = new ArrayList<>();
 }

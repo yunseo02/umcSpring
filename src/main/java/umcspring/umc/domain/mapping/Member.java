@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 import umcspring.umc.domain.Address;
 import umcspring.umc.domain.Alarm.Alarm;
-import umcspring.umc.domain.PreferenceFood;
 import umcspring.umc.domain.Review;
 import umcspring.umc.domain.common.BaseEntity;
 import umcspring.umc.domain.enums.Gender;
@@ -31,7 +30,7 @@ public class Member extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    @OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<PreferenceFood> preferenceFoods = new ArrayList<>();
 
     @Embedded
@@ -42,16 +41,16 @@ public class Member extends BaseEntity {
 
     private LocalDateTime inactive_date;
 
-    private int total_point;
+    private Integer total_point;
 
     private String phone_num;
 
-    @OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<Alarm> alarms = new ArrayList<>();
 
-    @OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<Review> reviews = new ArrayList<>();
 
-    @OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<MemberMission> memberMissions = new ArrayList<>();
 }

@@ -1,4 +1,4 @@
-package umcspring.umc.domain;
+package umcspring.umc.domain.mapping;
 
 import jakarta.persistence.*;
 import lombok.*;

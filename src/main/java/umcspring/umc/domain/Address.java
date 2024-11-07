@@ -1,12 +1,14 @@
 package umcspring.umc.domain;
 
 import jakarta.persistence.Embeddable;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import umcspring.umc.domain.common.BaseEntity;
 
 @Embeddable
-@Getter @Setter
+@Getter
+@Builder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 public class Address {
 
     private String city;
