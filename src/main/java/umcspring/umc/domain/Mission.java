@@ -2,9 +2,7 @@ package umcspring.umc.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
-import umcspring.umc.domain.Store;
 import umcspring.umc.domain.common.BaseEntity;
-import umcspring.umc.domain.mapping.MemberMission;
 
 import java.util.ArrayList;
 import java.util.List;

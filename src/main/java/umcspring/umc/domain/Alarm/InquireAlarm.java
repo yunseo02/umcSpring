@@ -6,9 +6,6 @@ import lombok.*;
 
 @Entity
 @Getter
-@Builder
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
 @DiscriminatorValue("I")
 public class InquireAlarm extends Alarm{
 }

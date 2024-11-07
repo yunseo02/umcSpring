@@ -2,14 +2,11 @@ package umcspring.umc.domain.Alarm;
 
 import jakarta.persistence.*;
 import lombok.*;
-import umcspring.umc.domain.mapping.Member;
+import umcspring.umc.domain.Member;
 import umcspring.umc.domain.common.BaseEntity;
 
 @Entity
 @Getter
-@Builder
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "dtype")
 public abstract class Alarm extends BaseEntity {

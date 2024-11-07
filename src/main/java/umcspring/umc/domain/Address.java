@@ -18,9 +18,7 @@ public class Address {
     @Column(length = 50)
     private String street;
 
-    @Column(precision = 10, scale = 8)
     private double latitude;
 
-    @Column(precision = 10, scale = 8)
     private double longitude;
 }

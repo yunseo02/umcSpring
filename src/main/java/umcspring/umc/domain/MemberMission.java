@@ -1,8 +1,7 @@
-package umcspring.umc.domain.mapping;
+package umcspring.umc.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
-import umcspring.umc.domain.Mission;
 import umcspring.umc.domain.common.BaseEntity;
 
 @Entity

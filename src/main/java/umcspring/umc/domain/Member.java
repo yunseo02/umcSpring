@@ -1,10 +1,8 @@
-package umcspring.umc.domain.mapping;
+package umcspring.umc.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
-import umcspring.umc.domain.Address;
 import umcspring.umc.domain.Alarm.Alarm;
-import umcspring.umc.domain.Review;
 import umcspring.umc.domain.common.BaseEntity;
 import umcspring.umc.domain.enums.Gender;
 import umcspring.umc.domain.enums.MemberStatus;

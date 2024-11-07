@@ -6,9 +6,6 @@ import lombok.*;
 
 @Entity
 @Getter
-@Builder
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
 @DiscriminatorValue("R")
 public class ReviewAlarm extends Alarm{
 }
