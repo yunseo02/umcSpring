@@ -23,10 +23,19 @@ public class Store extends BaseEntity {
     private int certification_num;
     private double latitude;
     private double longitude;
-
+    private double score;
     @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
     private List<Review> reviews = new ArrayList<>();
 
     @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
     private List<Mission> missions = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Store{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", score=" + score +
+                '}';
+    }
 }
