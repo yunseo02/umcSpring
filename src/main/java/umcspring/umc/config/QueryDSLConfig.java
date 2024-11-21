@@ -14,5 +14,5 @@ public class QueryDSLConfig {
     @Bean
     public JPAQueryFactory jpaQueryFactory(){
         return new JPAQueryFactory(entityManager);
-    }
+    }//entityManager 주입받아야 함
 }
