@@ -14,10 +14,22 @@ public class PreferenceFood {
     @Column(name = "preference_Food_id")
     private Long id;
 
-    @Column(length = 20)
-    private String Food;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "food_category_id")
+    private FoodCategory foodCategory;
+
+    //연관관계 매핑
+    public void setMember(Member member){
+        if(this.member != null)
+            member.getPreferenceFoods().remove(this);
+        this.member = member;
+        member.getPreferenceFoods().add(this);
+    }
+    public void setFoodCategory(FoodCategory foodCategory){
+        this.foodCategory = foodCategory;
+    }
 }

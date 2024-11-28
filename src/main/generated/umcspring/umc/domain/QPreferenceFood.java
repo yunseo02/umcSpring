@@ -22,7 +22,7 @@ public class QPreferenceFood extends EntityPathBase<PreferenceFood> {
 
     public static final QPreferenceFood preferenceFood = new QPreferenceFood("preferenceFood");
 
-    public final StringPath Food = createString("Food");
+    public final QFoodCategory foodCategory;
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
@@ -46,7 +46,8 @@ public class QPreferenceFood extends EntityPathBase<PreferenceFood> {
 
     public QPreferenceFood(Class<? extends PreferenceFood> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.member = inits.isInitialized("member") ? new QMember(forProperty("member"), inits.get("member")) : null;
+        this.foodCategory = inits.isInitialized("foodCategory") ? new QFoodCategory(forProperty("foodCategory")) : null;
+        this.member = inits.isInitialized("member") ? new QMember(forProperty("member")) : null;
     }
 
 }
