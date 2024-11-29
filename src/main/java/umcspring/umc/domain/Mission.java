@@ -21,6 +21,9 @@ public class Mission extends BaseEntity {
     private int price;
     private int point;
 
+    @Column(columnDefinition = "Text")
+    private String content;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "store_id")
     private Store store;

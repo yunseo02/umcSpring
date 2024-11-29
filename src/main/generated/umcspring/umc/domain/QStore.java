@@ -18,6 +18,8 @@ public class QStore extends EntityPathBase<Store> {
 
     private static final long serialVersionUID = 1340838896L;
 
+    private static final PathInits INITS = PathInits.DIRECT2;
+
     public static final QStore store = new QStore("store");
 
     public final umcspring.umc.domain.common.QBaseEntity _super = new umcspring.umc.domain.common.QBaseEntity(this);
@@ -39,6 +41,8 @@ public class QStore extends EntityPathBase<Store> {
 
     public final NumberPath<Integer> price = createNumber("price", Integer.class);
 
+    public final QRegion region;
+
     public final ListPath<Review, QReview> reviews = this.<Review, QReview>createList("reviews", Review.class, QReview.class, PathInits.DIRECT2);
 
     public final NumberPath<Double> score = createNumber("score", Double.class);
@@ -47,15 +51,24 @@ public class QStore extends EntityPathBase<Store> {
     public final DateTimePath<java.time.LocalDateTime> updateAt = _super.updateAt;
 
     public QStore(String variable) {
-        super(Store.class, forVariable(variable));
+        this(Store.class, forVariable(variable), INITS);
     }
 
     public QStore(Path<? extends Store> path) {
-        super(path.getType(), path.getMetadata());
+        this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
     }
 
     public QStore(PathMetadata metadata) {
-        super(Store.class, metadata);
+        this(metadata, PathInits.getFor(metadata, INITS));
+    }
+
+    public QStore(PathMetadata metadata, PathInits inits) {
+        this(Store.class, metadata, inits);
+    }
+
+    public QStore(Class<? extends Store> type, PathMetadata metadata, PathInits inits) {
+        super(type, metadata, inits);
+        this.region = inits.isInitialized("region") ? new QRegion(forProperty("region")) : null;
     }
 
 }

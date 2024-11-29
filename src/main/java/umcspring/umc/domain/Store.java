@@ -24,6 +24,11 @@ public class Store extends BaseEntity {
     private double latitude;
     private double longitude;
     private double score;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "region_id")
+    private Region region;
+
     @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
     private List<Review> reviews = new ArrayList<>();
 

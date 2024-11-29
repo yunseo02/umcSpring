@@ -3,6 +3,7 @@ package umcspring.umc.domain;
 import jakarta.persistence.*;
 import lombok.*;
 import umcspring.umc.domain.common.BaseEntity;
+import umcspring.umc.domain.enums.MemberMissionStatus;
 
 @Entity
 @Getter
@@ -17,8 +18,9 @@ public class MemberMission extends BaseEntity {
 
     private int score;
 
-    @Column(columnDefinition = "Text")
-    private String content;
+    @Enumerated
+    @Column(columnDefinition = "VARCHAR(15) DEFAULT 'IN_PROGRESS'")
+    private MemberMissionStatus status;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")

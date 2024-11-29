@@ -24,6 +24,8 @@ public class QMission extends EntityPathBase<Mission> {
 
     public final umcspring.umc.domain.common.QBaseEntity _super = new umcspring.umc.domain.common.QBaseEntity(this);
 
+    public final StringPath content = createString("content");
+
     //inherited
     public final DateTimePath<java.time.LocalDateTime> createdAt = _super.createdAt;
 
@@ -58,7 +60,7 @@ public class QMission extends EntityPathBase<Mission> {
 
     public QMission(Class<? extends Mission> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.store = inits.isInitialized("store") ? new QStore(forProperty("store")) : null;
+        this.store = inits.isInitialized("store") ? new QStore(forProperty("store"), inits.get("store")) : null;
     }
 
 }
