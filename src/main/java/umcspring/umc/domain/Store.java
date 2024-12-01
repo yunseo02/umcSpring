@@ -19,11 +19,12 @@ public class Store extends BaseEntity {
     private Long id;
 
     private String name;
-    private int price;
     private int certification_num;
-    private double latitude;
-    private double longitude;
-    private double score;
+    private String address;
+    private String specAddress;
+
+    @Column(nullable = true)
+    private Double score;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "region_id")
@@ -42,5 +43,12 @@ public class Store extends BaseEntity {
                 ", name='" + name + '\'' +
                 ", score=" + score +
                 '}';
+    }
+
+    public void setRegion(Region region){
+        if(this.region != null)
+            region.getStores().remove(this);
+        this.region = region;
+        region.getStores().add(this);
     }
 }

@@ -13,7 +13,7 @@ import java.lang.annotation.*;
 public @interface ExistCategories {
 
     String message() default "해당하는 카테고리는 존재하지 않습니다.";//유효성 검증 실패 시 반환될 기본 메시지 정의
-    Class<?>[] groups() default {};//유효 검증 그룹을 정의@
+    Class<?>[] groups() default {};//유효 검증 그룹을 정의
     Class<? extends Payload>[] payload() default {};
 
 }

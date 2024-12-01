@@ -24,6 +24,8 @@ public class QStore extends EntityPathBase<Store> {
 
     public final umcspring.umc.domain.common.QBaseEntity _super = new umcspring.umc.domain.common.QBaseEntity(this);
 
+    public final StringPath address = createString("address");
+
     public final NumberPath<Integer> certification_num = createNumber("certification_num", Integer.class);
 
     //inherited
@@ -31,21 +33,17 @@ public class QStore extends EntityPathBase<Store> {
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
-    public final NumberPath<Double> latitude = createNumber("latitude", Double.class);
-
-    public final NumberPath<Double> longitude = createNumber("longitude", Double.class);
-
     public final ListPath<Mission, QMission> missions = this.<Mission, QMission>createList("missions", Mission.class, QMission.class, PathInits.DIRECT2);
 
     public final StringPath name = createString("name");
-
-    public final NumberPath<Integer> price = createNumber("price", Integer.class);
 
     public final QRegion region;
 
     public final ListPath<Review, QReview> reviews = this.<Review, QReview>createList("reviews", Review.class, QReview.class, PathInits.DIRECT2);
 
     public final NumberPath<Double> score = createNumber("score", Double.class);
+
+    public final StringPath specAddress = createString("specAddress");
 
     //inherited
     public final DateTimePath<java.time.LocalDateTime> updateAt = _super.updateAt;

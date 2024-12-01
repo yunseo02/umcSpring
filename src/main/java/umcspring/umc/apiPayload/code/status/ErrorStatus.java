@@ -23,6 +23,9 @@ public enum ErrorStatus implements BaseErrorCode {
     //음식 카테고리 관련 에러
     FOOD_CATEGORY_NOT_FOUND(HttpStatus.NOT_FOUND, "FOOD4001", "선택된 선호 음식이 없습니다."),
 
+    //지역 관련 에러
+    REGION_NOT_FOUND(HttpStatus.NOT_FOUND, "REGION4001", "선택된 지역이 없습니다."),
+
     //예시
     ARTICLE_NOT_FOUND(HttpStatus.NOT_FOUND, "ARTICLE4001", "게시글이 없습니다."),
 

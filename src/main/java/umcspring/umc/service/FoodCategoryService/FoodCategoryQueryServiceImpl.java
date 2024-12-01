@@ -6,7 +6,6 @@ import umcspring.umc.repository.FoodCategoryRepository;
 
 @Service
 @RequiredArgsConstructor
-
 public class FoodCategoryQueryServiceImpl implements FoodCategoryQueryService{
 
     private final FoodCategoryRepository foodCategoryRepository;
