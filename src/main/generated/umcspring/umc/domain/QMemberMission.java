@@ -33,8 +33,6 @@ public class QMemberMission extends EntityPathBase<MemberMission> {
 
     public final QMission mission;
 
-    public final NumberPath<Integer> score = createNumber("score", Integer.class);
-
     public final EnumPath<umcspring.umc.domain.enums.MemberMissionStatus> status = createEnum("status", umcspring.umc.domain.enums.MemberMissionStatus.class);
 
     //inherited

@@ -16,8 +16,6 @@ public class MemberMission extends BaseEntity {
     @Column(name = "member_mission_id")
     private Long id;
 
-    private int score;
-
     @Enumerated
     @Column(columnDefinition = "VARCHAR(15) DEFAULT 'IN_PROGRESS'")
     private MemberMissionStatus status;
