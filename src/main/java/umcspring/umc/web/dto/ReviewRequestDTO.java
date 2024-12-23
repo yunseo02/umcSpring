@@ -12,7 +12,7 @@ public class ReviewRequestDTO {
     @Getter
     public static class CreateDTO {
         @Min(0) @Max(5)
-        Integer score;
+        Float score;
         @NotBlank
         String content;
 
@@ -22,4 +22,6 @@ public class ReviewRequestDTO {
         @NotNull
         Long storeId;
     }
+
+
 }

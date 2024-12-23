@@ -36,6 +36,7 @@ public class ReviewCommandServiceImpl implements ReviewCommandService{
         Long storeId = request.getStoreId();
         Store store = storeRepository.findById(storeId)
                 .orElseThrow(() -> new TempHandler(ErrorStatus.STORE_NOT_FOUND));
+        newReview.setStore(store);
         //reviewImages 저장
 
         return reviewRepository.save(newReview);

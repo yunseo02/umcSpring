@@ -3,9 +3,11 @@ package umcspring.umc.converter;
 import umcspring.umc.domain.Review;
 import umcspring.umc.web.dto.ReviewRequestDTO;
 import umcspring.umc.web.dto.ReviewResponseDTO;
+import umcspring.umc.web.dto.StoreResponseDTO;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ReviewConverter {
 
