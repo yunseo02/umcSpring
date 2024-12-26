@@ -18,7 +18,7 @@ public class MemberConverter {
     }
 
     public static Member toMember(MemberRequestDTO.JoinDto request) {
-
+        System.out.println("gender값"+request.getGender());
         Gender gender = null;
 
         switch (request.getGender()){
@@ -42,6 +42,9 @@ public class MemberConverter {
                 .birthMonth(request.getBirthMonth())
                 .birthDay(request.getBirthDay())
                 .preferenceFoods(new ArrayList<>())
+                .email(request.getEmail())
+                .password(request.getPassword())
+                .role(request.getRole())
                 .build();
     }
 }

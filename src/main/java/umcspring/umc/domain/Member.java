@@ -9,6 +9,7 @@ import umcspring.umc.domain.Alarm.Alarm;
 import umcspring.umc.domain.common.BaseEntity;
 import umcspring.umc.domain.enums.Gender;
 import umcspring.umc.domain.enums.MemberStatus;
+import umcspring.umc.domain.enums.Role;
 
 
 import java.time.LocalDateTime;
@@ -47,11 +48,17 @@ public class Member extends BaseEntity {
     @ColumnDefault("0")
     private Integer point;
 
-//    @Column(nullable = false, length = 50)
-    private String email;
-
 //    @Column(length = 15, unique = true, nullable = false)
     private String phone_num;
+
+    @Column(nullable = false, length = 50)
+    private String email;
+
+    @Column(nullable = false)
+    private String password;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     @Enumerated(EnumType.STRING)
     @Column(columnDefinition = "VARCHAR(10) DEFAULT 'ACTIVE'")
@@ -68,4 +75,8 @@ public class Member extends BaseEntity {
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<MemberMission> memberMissions = new ArrayList<>();
+
+    public void encodePassword(String password) {
+        this.password = password;
+    }
 }
