@@ -40,8 +40,8 @@ dependencies {
 	testImplementation 'org.springframework.security:spring-security-test'
 	//thymeleaf
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	// thymeleaf-spring-security integration
-	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+	//소셜로그인 OAuth2
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 }
 
 sourceSets {

@@ -29,6 +29,11 @@ public class SecurityConfig {
                     .logoutUrl("/logout")//로그아웃 요청 url을 /logout으로 설정
                     .logoutSuccessUrl("/login?logout")//성공 후 리다이렉트될 url
                     .permitAll()
+            )
+            .oauth2Login(oauth2 -> oauth2
+                    .loginPage("/login")
+                    .defaultSuccessUrl("/home", true)
+                    .permitAll()
             );
 
         return http.build();
