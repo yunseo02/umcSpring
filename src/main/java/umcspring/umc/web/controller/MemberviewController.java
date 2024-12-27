@@ -27,9 +27,6 @@ public class MemberviewController {
     public String joinMember(@ModelAttribute("memberJoinDto") MemberRequestDTO.JoinDto request,
                              BindingResult bindingResult,
                              Model model) {
-        System.out.println("controller gender value: "+request.getGender());
-        System.out.println("name: "+ request.getName());
-        System.out.println("name: "+ request.getPreferenceFoods());
         if (bindingResult.hasErrors()) {
             return "signup";
         }
@@ -54,19 +51,10 @@ public class MemberviewController {
     }
 
     @GetMapping("/home")
-    public String home(Model model) {
+    public String home() {
         System.out.println("home controller 들어옴");
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         System.out.println("Authentication: " + authentication);
-
-        String role = authentication.getAuthorities()
-                .stream()
-                .findFirst()
-                .map(GrantedAuthority::getAuthority)
-                .orElse("ROLE_USER"); // 기본 역할 설정
-
-        model.addAttribute("username", authentication.getName());
-        model.addAttribute("role", role);
 
         return "home";
     }
